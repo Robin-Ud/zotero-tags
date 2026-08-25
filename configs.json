@@ -1,0 +1,112 @@
+{
+  "_comentario": "Vocabulario de tags e caminhos do zotero_tags. Mexa aqui, nao no .py.",
+  "banco": "~/Zotero/zotero.sqlite",
+  "dir_csv": "~/etc/docs",
+  "padrao_csv": "zotero_relevancia_*.csv",
+  "_nota_manuais": "eixos que exigem ler o item: o motor so aplica o que estiver no JSON, nunca adivinha.",
+  "eixos_manuais": {
+    "regiao": "regioes.json",
+    "tema": "temas.json"
+  },
+  "_nota_grupos": "exclusivo=true: o item fica com no maximo UMA tag do grupo. exclusivo=false: marcador, varias convivem.",
+  "grupos": {
+    "estado": {
+      "exclusivo": false,
+      "tags": [
+        "n-lido",
+        "n-aprofundado"
+      ]
+    },
+    "tipo": {
+      "exclusivo": true,
+      "tags": [
+        "t-artigo",
+        "t-mestrado",
+        "t-doutorado",
+        "t-outro"
+      ]
+    },
+    "relevancia": {
+      "exclusivo": true,
+      "tags": [
+        "r-a",
+        "r-b",
+        "r-c",
+        "r-d",
+        "r-sem-metrica"
+      ]
+    },
+    "marcador": {
+      "exclusivo": false,
+      "tags": [
+        "r-imaturo"
+      ]
+    },
+    "regiao": {
+      "exclusivo": false,
+      "tags": [
+        "g-brasil",
+        "g-am-sul",
+        "g-am-norte",
+        "g-europa",
+        "g-asia",
+        "g-oceania",
+        "g-africa",
+        "g-global"
+      ]
+    },
+    "tema": {
+      "exclusivo": false,
+      "tags": [
+        "k-micotoxinas",
+        "k-bovinos",
+        "k-pastagem",
+        "k-daninhas",
+        "k-ml",
+        "k-eletronica"
+      ]
+    }
+  },
+  "_nota_pares": "tag negativa -> tag positiva que a cancela. O item so recebe a negativa se nao tiver a positiva.",
+  "pares": {
+    "n-lido": "lido",
+    "n-aprofundado": "aprofundado"
+  },
+  "_nota_protegidas": "marcadores pessoais fora do vocabulario de prefixos. O script nunca cria nem apaga.",
+  "protegidas": [
+    "lido",
+    "livro",
+    "premiado"
+  ],
+  "_nota_remover": "erros de digitacao a limpar. 'aprodundado' e duplicata pura de 'n-aprofundado'.",
+  "remover": [
+    "aprodundado"
+  ],
+  "_nota_tese": "thesisType e campo livre; casa por substring, em minusculas, sem acento.",
+  "tese_doutorado": [
+    "doutorado"
+  ],
+  "tese_mestrado": [
+    "mestrado",
+    "dissertacao"
+  ],
+  "tese_graduacao": [
+    "trabalho de conclusao de curso",
+    "tcc",
+    "graduacao",
+    "bacharelado"
+  ],
+  "tipos_ignorados": [
+    "attachment",
+    "note",
+    "annotation"
+  ],
+  "_nota_faxina": "tipos que quase sempre sao artigo salvo errado quando tem PDF anexado.",
+  "tipos_suspeitos_de_paper": [
+    "webpage",
+    "magazineArticle"
+  ],
+  "_nota_poda": "itemTags.type=1 sao as keywords que o Zotero importa do publisher. Cobriam 15 dos 64 itens, 74 delas num item so: nao filtram nada. Desligue tambem em Editar > Configuracoes > Geral para nao voltarem.",
+  "podar_automaticas": true,
+  "keywords_preservadas": []
+}
