@@ -14,7 +14,7 @@ python3 zotero_tags_test.py               # 39 testes
 Irmão de [`zotero-relevancia`](../zotero-relevancia) (de onde vem o CSV e as
 funções de normalização) e de [`zotero-chaves`](../zotero-chaves) (de onde veio
 a guarda de Zotero aberto). O julgamento por trás das notas está em
-`~/etc/docs/contexto.md`.
+`~/deving/zotero-tags/contexto.md`.
 
 ## Os cinco eixos
 

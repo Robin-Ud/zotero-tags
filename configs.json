@@ -1,7 +1,7 @@
 {
   "_comentario": "Vocabulario de tags e caminhos do zotero_tags. Mexa aqui, nao no .py.",
   "banco": "~/Zotero/zotero.sqlite",
-  "dir_csv": "~/etc/docs",
+  "dir_csv": "~/deving/zotero-relevancia/saida",
   "padrao_csv": "zotero_relevancia_*.csv",
   "_nota_manuais": "eixos que exigem ler o item: o motor so aplica o que estiver no JSON, nunca adivinha.",
   "eixos_manuais": {

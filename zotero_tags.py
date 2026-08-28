@@ -173,7 +173,12 @@ def tag_de_tipo(item, cfg):
 def tag_de_relevancia(linha):
     if linha is None:
         return None
-    if "sem_registro_openalex" in linha["flags"]:
+    # sem_registro_openalex: o OpenAlex nao conhece o item.
+    # fora_da_regua: conhece, mas e literatura cinzenta ou base de dados — a
+    # regua bibliometrica nao sabe medir. Nos dois casos a resposta honesta e
+    # "nao consigo avaliar", que e diferente de "avaliei e e fraco" (r-d).
+    if ("sem_registro_openalex" in linha["flags"]
+            or "fora_da_regua" in linha["flags"]):
         return "r-sem-metrica"
     tier = linha["tier"].strip().lower()
     return "r-" + tier if tier else None
