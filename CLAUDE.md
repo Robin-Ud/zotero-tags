@@ -14,7 +14,11 @@ não é demérito) que nem o CSV nem este código carregam.
   `temas.json`: leia o PDF e ache o local do experimento — filiação do autor não
   serve — e o assunto. Na dúvida, pergunte em vez de chutar.
 - **Nunca invente `key`.** 8 caracteres base32 sem `0`, `1` e `O`; chave
-  inventada quebra a sincronização. Ver `../zotero-chaves`.
+  inventada quebra a sincronização com `'<chave>' is not a valid collection key`.
+  O corretor mora aqui: `zotero_corrigir_chaves.py` (dry-run por padrão).
+  Detalhe que parece bug e não é: `ALFABETO_VALIDO` aceita `L`, mas
+  `ALFABETO_GERACAO` não gera — aceitamos o que o Zotero aceita e geramos só o
+  que é seguro sob qualquer versão do regex dele.
 - **A guarda de Zotero aberto usa `pgrep -x zotero-bin`**, não `zotero`. Já
   errei isso: `pgrep -x zotero` nunca dispara, e a proteção vira decoração.
 

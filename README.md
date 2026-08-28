@@ -8,7 +8,11 @@ python3 zotero_tags.py                    # dry-run (padrão): mostra o diff
 python3 zotero_tags.py --aplicar
 python3 zotero_tags.py --faxina           # só o relatório, sem tocar em tag
 python3 zotero_tags.py --exportar-manuais # semeia regioes.json e temas.json do banco
-python3 zotero_tags_test.py               # 39 testes
+python3 zotero_tags_test.py               # 40 testes
+
+python3 zotero_corrigir_chaves.py         # dry-run: acha chave de colecao invalida
+python3 zotero_corrigir_chaves.py --aplicar
+python3 zotero_corrigir_chaves_test.py    # 13 testes
 ```
 
 Irmão de [`zotero-relevancia`](../zotero-relevancia) (de onde vem o CSV e as
