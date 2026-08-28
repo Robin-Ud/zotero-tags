@@ -16,7 +16,7 @@ python3 zotero_corrigir_chaves_test.py    # 13 testes
 ```
 
 Irmão de [`zotero-relevancia`](../zotero-relevancia) (de onde vem o CSV e as
-funções de normalização) e de [`zotero-chaves`](../zotero-chaves) (de onde veio
+funções de normalização) e absorveu o antigo `zotero-chaves` (de onde veio
 a guarda de Zotero aberto). O julgamento por trás das notas está em
 `~/deving/zotero-tags/contexto.md`.
 
@@ -68,7 +68,7 @@ ali a keyword que valer a pena e ela sobrevive à poda.
   marcadores pessoais fora do vocabulário de prefixos — nem cria, nem apaga.
 - **A lixeira** (`deletedItems`) e itens filhos (anexo, nota, anotação).
 - **Chaves.** Nenhuma é gerada; a do Zotero tem regra própria (8 caracteres
-  base32 sem `0`, `1` e `O`) e quem mexe nisso é o `zotero-chaves`.
+  base32 sem `0`, `1` e `O`) e quem conserta é o `zotero_corrigir_chaves.py`, aqui mesmo.
 
 ## Segurança
 

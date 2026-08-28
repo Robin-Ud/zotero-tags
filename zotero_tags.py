@@ -64,7 +64,7 @@ rel = carregar_relevancia()
 # --------------------------------------------------------------------------
 
 def zotero_rodando(banco):
-    """Copia fiel da guarda do zotero-chaves: o processo chama-se zotero-bin,
+    """Guarda compartilhada com o zotero_corrigir_chaves.py: o processo chama-se zotero-bin,
     e -x casa o nome exato (com -f o proprio comando daria falso positivo)."""
     if os.path.exists(banco + "-journal"):
         return "existe %s-journal (Zotero aberto ou fechado sujo)" % banco
