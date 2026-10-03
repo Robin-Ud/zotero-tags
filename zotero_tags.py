@@ -44,7 +44,7 @@ CONFIGS_PADRAO = os.path.join(DIR_SCRIPT, "configs.json")
 
 # normalizar_titulo/limpar_doi ja existem no projeto irmao; duplicar as regras
 # de normalizacao seria criar duas verdades sobre o que e "o mesmo titulo".
-DIR_RELEVANCIA = os.path.expanduser("~/deving/zotero-relevancia")
+DIR_RELEVANCIA = os.path.expanduser("~/deving/zotero/relevancia")
 
 
 def carregar_relevancia():

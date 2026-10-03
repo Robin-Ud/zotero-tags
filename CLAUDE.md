@@ -1,6 +1,6 @@
 # zotero-tags — notas para o agente
 
-Leia `~/deving/zotero-tags/contexto.md` antes de mexer em qualquer coisa de relevância.
+Leia `~/deving/zotero/tags/contexto.md` antes de mexer em qualquer coisa de relevância.
 Ele guarda o julgamento (por que o FWCI pesa 35, por que `literatura_cinzenta`
 não é demérito) que nem o CSV nem este código carregam.
 

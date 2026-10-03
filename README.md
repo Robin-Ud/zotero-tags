@@ -15,10 +15,10 @@ python3 zotero_corrigir_chaves.py --aplicar
 python3 zotero_corrigir_chaves_test.py    # 13 testes
 ```
 
-Irmão de [`zotero-relevancia`](../zotero-relevancia) (de onde vem o CSV e as
+Irmão de [`zotero-relevancia`](../relevancia) (de onde vem o CSV e as
 funções de normalização) e absorveu o antigo `zotero-chaves` (de onde veio
 a guarda de Zotero aberto). O julgamento por trás das notas está em
-`~/deving/zotero-tags/contexto.md`.
+`~/deving/zotero/tags/contexto.md`.
 
 ## Os cinco eixos
 
