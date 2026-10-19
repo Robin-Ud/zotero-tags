@@ -17,8 +17,12 @@ python3 zotero_corrigir_chaves_test.py    # 13 testes
 
 Irmão de [`zotero-relevancia`](../relevancia) (de onde vem o CSV e as
 funções de normalização) e absorveu o antigo `zotero-chaves` (de onde veio
-a guarda de Zotero aberto). O julgamento por trás das notas está em
-`~/deving/zotero/tags/contexto.md`.
+a guarda de Zotero aberto). Clone os dois lado a lado (`zotero/tags` e
+`zotero/relevancia`): este importa o irmão de `../relevancia`.
+
+Os eixos manuais (`regioes.json`, `temas.json`, `prioridades.json`) são da sua
+biblioteca e moram em `pessoal/` (fora do git). Sem `pessoal/`, o motor lê o
+`exemplo/`, com chaves inventadas; o `--exportar-manuais` sempre grava em `pessoal/`.
 
 ## Os cinco eixos
 

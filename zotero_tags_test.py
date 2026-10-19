@@ -297,7 +297,8 @@ class TestArquivos(unittest.TestCase):
 
     def test_mapa_indexa_por_chave_e_ignora_comentario(self):
         with tempfile.TemporaryDirectory() as pasta:
-            with open(os.path.join(pasta, "regioes.json"), "w") as arq:
+            os.mkdir(os.path.join(pasta, "pessoal"))
+            with open(os.path.join(pasta, "pessoal", "regioes.json"), "w") as arq:
                 json.dump({"_comentario": "nao e tag",
                            "g-brasil": ["AAAA1111", "BBBB2222"],
                            "g-am-sul": ["AAAA1111"]}, arq)
@@ -313,9 +314,10 @@ class TestArquivos(unittest.TestCase):
     def test_eixos_manuais_se_somam_no_mesmo_item(self):
         """regiao e tema convivem: o item recebe as duas familias."""
         with tempfile.TemporaryDirectory() as pasta:
-            with open(os.path.join(pasta, "regioes.json"), "w") as arq:
+            os.mkdir(os.path.join(pasta, "pessoal"))
+            with open(os.path.join(pasta, "pessoal", "regioes.json"), "w") as arq:
                 json.dump({"g-brasil": ["AAAA1111"]}, arq)
-            with open(os.path.join(pasta, "temas.json"), "w") as arq:
+            with open(os.path.join(pasta, "pessoal", "temas.json"), "w") as arq:
                 json.dump({"k-bovinos": ["AAAA1111"], "k-ml": ["AAAA1111"]}, arq)
             antigo = z.DIR_SCRIPT
             try:

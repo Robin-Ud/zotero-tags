@@ -44,7 +44,8 @@ CONFIGS_PADRAO = os.path.join(DIR_SCRIPT, "configs.json")
 
 # normalizar_titulo/limpar_doi ja existem no projeto irmao; duplicar as regras
 # de normalizacao seria criar duas verdades sobre o que e "o mesmo titulo".
-DIR_RELEVANCIA = os.path.expanduser("~/deving/zotero/relevancia")
+# clone do zotero-relevancia ao lado deste (../relevancia)
+DIR_RELEVANCIA = os.path.join(os.path.dirname(DIR_SCRIPT), "relevancia")
 
 
 def carregar_relevancia():
@@ -83,7 +84,8 @@ def carregar_config(caminho):
     with open(caminho) as arq:
         cfg = json.load(arq)
     for chave in ("banco", "dir_csv"):
-        cfg[chave] = os.path.expanduser(cfg[chave])
+        # relativo vale a partir da pasta do script
+        cfg[chave] = os.path.join(DIR_SCRIPT, os.path.expanduser(cfg[chave]))
     return cfg
 
 
@@ -416,9 +418,18 @@ def contar_automaticas(con):
 # Regioes
 # --------------------------------------------------------------------------
 
+def dir_manuais(gravar=False):
+    """Os eixos manuais sao da sua biblioteca: moram em pessoal/ (fora do git).
+    Sem pessoal/, a leitura cai no exemplo/; a escrita sempre vai pro pessoal/."""
+    pessoal = os.path.join(DIR_SCRIPT, "pessoal")
+    if gravar or os.path.isdir(pessoal):
+        return pessoal
+    return os.path.join(DIR_SCRIPT, "exemplo")
+
+
 def carregar_mapa(arquivo):
     """Le um eixo manual (regiao, tema): JSON de tag -> [item_key]."""
-    caminho = os.path.join(DIR_SCRIPT, arquivo)
+    caminho = os.path.join(dir_manuais(), arquivo)
     if not os.path.exists(caminho):
         return {}, caminho
     with open(caminho) as arq:
@@ -468,7 +479,8 @@ def exportar_manuais(con, cfg):
             ]
             if chaves:
                 saida[tag] = chaves
-        caminho = os.path.join(DIR_SCRIPT, arquivo)
+        os.makedirs(dir_manuais(gravar=True), exist_ok=True)
+        caminho = os.path.join(dir_manuais(gravar=True), arquivo)
         saida["_comentario"] = COMENTARIO_MANUAL.get(grupo, "")
         with open(caminho, "w") as arq:
             json.dump(saida, arq, indent=2, ensure_ascii=False)

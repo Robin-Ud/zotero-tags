@@ -1,12 +1,13 @@
 {
   "_comentario": "Vocabulario de tags e caminhos do zotero_tags. Mexa aqui, nao no .py.",
   "banco": "~/Zotero/zotero.sqlite",
-  "dir_csv": "~/deving/zotero/relevancia/saida",
+  "dir_csv": "../relevancia/saida",
   "padrao_csv": "zotero_relevancia_*.csv",
   "_nota_manuais": "eixos que exigem ler o item: o motor so aplica o que estiver no JSON, nunca adivinha.",
   "eixos_manuais": {
     "regiao": "regioes.json",
-    "tema": "temas.json"
+    "tema": "temas.json",
+    "prioridade": "prioridades.json"
   },
   "_nota_grupos": "exclusivo=true: o item fica com no maximo UMA tag do grupo. exclusivo=false: marcador, varias convivem.",
   "grupos": {
@@ -64,6 +65,16 @@
         "k-daninhas",
         "k-ml",
         "k-eletronica"
+      ]
+    },
+    "prioridade": {
+      "exclusivo": true,
+      "tags": [
+        "p1-nucleo",
+        "p2-tecnica",
+        "p3-comparativo",
+        "p4-experimental",
+        "p5-fora-escopo"
       ]
     }
   },

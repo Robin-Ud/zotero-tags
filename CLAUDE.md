@@ -1,6 +1,6 @@
 # zotero-tags — notas para o agente
 
-Leia `~/deving/zotero/tags/contexto.md` antes de mexer em qualquer coisa de relevância.
+Leia `pessoal/contexto.md` antes de mexer em qualquer coisa de relevância.
 Ele guarda o julgamento (por que o FWCI pesa 35, por que `literatura_cinzenta`
 não é demérito) que nem o CSV nem este código carregam.
 
@@ -10,8 +10,8 @@ não é demérito) que nem o CSV nem este código carregam.
   eram 75 keywords do publisher cobrindo 15 dos 64 itens, 74 num item só. O motor
   apaga todas a cada rodada. Tag que você criar tem que ser `type = 0` e estar no
   vocabulário do `configs.json`.
-- **Região e tema não se adivinham.** Item novo fora do `regioes.json` ou do
-  `temas.json`: leia o PDF e ache o local do experimento — filiação do autor não
+- **Região e tema não se adivinham.** Item novo fora do `pessoal/regioes.json` ou do
+  `pessoal/temas.json`: leia o PDF e ache o local do experimento — filiação do autor não
   serve — e o assunto. Na dúvida, pergunte em vez de chutar.
 - **Nunca invente `key`.** 8 caracteres base32 sem `0`, `1` e `O`; chave
   inventada quebra a sincronização com `'<chave>' is not a valid collection key`.
@@ -40,3 +40,4 @@ Declare no `configs.json` (grupo certo, `exclusivo` certo) e escreva o teste
 junto. Tag fora do `configs.json` é invisível para o motor: ele não cria, e
 também não remove — o que é proposital, para não pisar nas tags manuais dele.
 
+@pessoal/CLAUDE.md
